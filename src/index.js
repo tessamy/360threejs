@@ -1,4 +1,8 @@
 import * as THREE from 'three';
+// Import module
+import * as OrbitControls from 'three-orbitcontrols';
+// Using
+
 
 // create a scene
 const scene = new THREE.Scene();
@@ -32,6 +36,9 @@ const render = () => {
   box.rotation.z += 0.05;
   renderer.render(scene, camera);
 };
+
+const controls = new OrbitControls( camera, renderer.domElement );
+// now the reference in 'controls' variable can be used just like in examples
 render();
 
 console.log('Here is your scene', scene);
